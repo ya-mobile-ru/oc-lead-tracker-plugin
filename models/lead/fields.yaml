@@ -1,0 +1,49 @@
+fields:
+  id:
+    label: yamobile.leadtracker::lang.lead.id
+    required: 0
+    type: number
+    span: auto
+    disabled: 1
+  name:
+    label: yamobile.leadtracker::lang.lead.name
+    placeholder: yamobile.leadtracker::lang.lead.name_placeholder
+    required: 0
+    type: text
+    span: auto
+  phone:
+    label: yamobile.leadtracker::lang.lead.phone
+    placeholder: yamobile.leadtracker::lang.lead.phone_placeholder
+    required: 0
+    type: text
+    span: auto
+  email:
+    label: yamobile.leadtracker::lang.lead.email
+    placeholder: yamobile.leadtracker::lang.lead.email_placeholder
+    required: 0
+    type: text
+    span: auto
+  info:
+    label: yamobile.leadtracker::lang.lead.info
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  source:
+    label: yamobile.leadtracker::lang.lead.source
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  ip:
+    label: yamobile.leadtracker::lang.lead.ip
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  user_agent:
+    label: yamobile.leadtracker::lang.lead.user_agent
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
