@@ -1,0 +1,24 @@
+columns:
+  id:
+    label: yamobile.leadtracker::lang.lead.id
+    type: number
+    searchable: true
+  name:
+    label: yamobile.leadtracker::lang.lead.name
+    type: text
+    searchable: true
+  phone:
+    label: yamobile.leadtracker::lang.lead.phone
+    type: text
+    searchable: true
+  email:
+    label: yamobile.leadtracker::lang.lead.email
+    type: text
+    searchable: true
+  ip:
+    label: yamobile.leadtracker::lang.lead.ip
+    type: text
+    searchable: true
+  created_at:
+    label: yamobile.leadtracker::lang.lead.created_at
+    type: datetime

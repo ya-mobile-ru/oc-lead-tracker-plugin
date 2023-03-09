@@ -1,0 +1,10 @@
+name: yamobile.leadtracker::lang.lead.breadcrumb
+form: $/yamobile/leadtracker/models/lead/fields.yaml
+modelClass: Yamobile\LeadTracker\Models\Lead
+defaultRedirect: yamobile/leadtracker/lead
+create:
+  redirect: "yamobile/leadtracker/lead/update/:id"
+  redirectClose: yamobile/leadtracker/lead
+update:
+  redirect: yamobile/leadtracker/lead
+  redirectClose: yamobile/leadtracker/lead
