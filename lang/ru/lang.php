@@ -22,4 +22,10 @@ return [
         'created_at' => 'Создано',
         'breadcrumb' => 'Лиды',
     ],
+    'components' => [
+        'tracker' => [
+            'name' => 'Lead Tracker',
+            'description' => 'Компонент для приёма лидов с форм',
+        ]
+    ],
 ];
