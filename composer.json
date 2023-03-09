@@ -1,0 +1,23 @@
+{
+	"name": "yamobile/leadtracker-plugin",
+	"type": "october-plugin",
+	"description": "Lead tracking system for October CMS",
+	"homepage": "https://github.com/ya-mobile-ru/lead-plugin",
+	"keywords": [
+		"october",
+		"octobercms",
+		"lead"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Evgeny Morozov",
+			"email": "evgenydmorozov@gmail.com",
+			"role": "Backend developer"
+		}
+	],
+	"require": {
+		"php": ">=7.0"
+	},
+	"minimum-stability": "dev"
+}
