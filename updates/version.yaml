@@ -3,3 +3,5 @@
 0.2.0:
   - Create leads
   - create_yamobile_leadtracker_leads.php
+0.3.0:
+  - Add Tracker component

@@ -22,4 +22,10 @@ return [
         'created_at' => 'Created at',
         'breadcrumb' => 'Leads',
     ],
+    'components' => [
+        'tracker' => [
+            'name' => 'Lead Tracker',
+            'description' => 'Component for submitting lead forms',
+        ]
+    ],
 ];
