@@ -20,7 +20,10 @@ return [
         'ip' => 'IP',
         'user_agent' => 'User-Agent',
         'created_at' => 'Создано',
-        'breadcrumb' => 'Лиды',
+        'breadcrumb-index' => 'Лиды',
+        'breadcrumb-create' => 'Новый лид',
+        'breadcrumb-preview' => 'Просмотр лида',
+        'breadcrumb-update' => 'Редактирование лида',
     ],
     'components' => [
         'tracker' => [
