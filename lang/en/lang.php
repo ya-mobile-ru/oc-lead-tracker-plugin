@@ -20,7 +20,6 @@ return [
         'ip' => 'IP',
         'user_agent' => 'User-Agent',
         'created_at' => 'Created at',
-        'breadcrumb' => 'Leads',
         'breadcrumb-index' => 'Leads',
         'breadcrumb-create' => 'New lead',
         'breadcrumb-preview' => 'Preview lead',
