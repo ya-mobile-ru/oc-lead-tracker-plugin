@@ -1,9 +1,9 @@
 title: Lead
 modelClass: Yamobile\LeadTracker\Models\Lead
 list: $/yamobile/leadtracker/models/lead/columns.yaml
-recordUrl: "yamobile/leadtracker/lead/update/:id"
+recordUrl: "yamobile/leadtracker/leads/update/:id"
 noRecordsMessage: "backend::lang.list.no_records"
-recordsPerPage: 20
+recordsPerPage: 2
 showSetup: true
 showCheckboxes: true
 toolbar:

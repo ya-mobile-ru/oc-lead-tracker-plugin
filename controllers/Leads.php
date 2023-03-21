@@ -5,7 +5,7 @@ namespace Yamobile\LeadTracker\Controllers;
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Lead extends Controller
+class Leads extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
