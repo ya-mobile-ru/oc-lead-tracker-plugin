@@ -36,6 +36,8 @@ class Tracker extends ComponentBase
             $lead->info = $infoFields;
         }
 
+        $lead->source = self::getURL();
+
         $lead->save();
     }
 
@@ -58,5 +60,20 @@ class Tracker extends ComponentBase
             return json_encode($infoFields);
         }
         return null;
+    }
+
+    static private function getURL()
+    {
+        $url = "";
+
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $url .= "https://";
+        } else {
+            $url .= "http://";
+        }
+        $url .= $_SERVER['HTTP_HOST'];
+        $url.= $_SERVER['REQUEST_URI'];
+
+        return $url;
     }
 }
