@@ -1,4 +1,4 @@
-name: yamobile.leadtracker::lang.lead.breadcrumb
+name: yamobile.leadtracker::lang.lead.breadcrumb-create
 form: $/yamobile/leadtracker/models/lead/fields.yaml
 modelClass: Yamobile\LeadTracker\Models\Lead
 defaultRedirect: yamobile/leadtracker/lead
