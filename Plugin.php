@@ -32,7 +32,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-                \Yamobile\LeadTracker\Components\Tracker::class => 'yamobile.leadtracker::lang.components.tracker.name',
+                \Yamobile\LeadTracker\Components\Tracker::class => 'Tracker',
         ];
     }
 }
