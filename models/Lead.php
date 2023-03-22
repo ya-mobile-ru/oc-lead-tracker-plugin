@@ -12,7 +12,13 @@ class Lead extends Model
 
     public $rules = [
         'email' => 'email',
-        'source' => 'url',
-        'ip' => 'ip',
+        'source' => [
+            'url',
+            'nullable',
+        ],
+        'ip' => [
+            'ip',
+            'nullable',
+        ],
     ];
 }
