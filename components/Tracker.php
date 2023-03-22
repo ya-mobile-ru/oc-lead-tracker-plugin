@@ -23,6 +23,32 @@ class Tracker extends ComponentBase
         $lead->phone = $_POST['phone'];
         $lead->email = $_POST['email'];
 
+        $infoFields = self::getInfoFileds();
+        if ($infoFields) {
+            $lead->info = $infoFields;
+        }
+        
         $lead->save();
+    }
+
+    static private function getInfoFileds()
+    {
+        $infoFields = array();
+
+        $postArrayKeys = array_keys($_POST);
+        $infoArrayKeys = array_filter($postArrayKeys, function ($key) {
+            $substring = substr($key, 0, 5);
+            if ($substring === self::INFO_FIELDS_KEY) {
+                return $key;
+            }
+        });
+        foreach ($infoArrayKeys as $key) {
+            $infoFields = array_merge($infoFields, array($key => $_POST[$key]));
+        }
+
+        if ($infoFields) {
+            return json_encode($infoFields);
+        }
+        return null;
     }
 }
