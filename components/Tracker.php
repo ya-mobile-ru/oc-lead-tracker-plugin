@@ -7,6 +7,8 @@ use Yamobile\LeadTracker\Models\Lead;
 
 class Tracker extends ComponentBase
 {
+    const INFO_FIELDS_KEY = 'info:';
+
     public function componentDetails()
     {
         return [
@@ -19,15 +21,21 @@ class Tracker extends ComponentBase
     {
         $lead = new Lead;
 
-        $lead->name = $_POST['name'];
-        $lead->phone = $_POST['phone'];
-        $lead->email = $_POST['email'];
+        if (array_key_exists('name', $_POST)) {
+            $lead->name = $_POST['name'];
+        }
+        if (array_key_exists('phone', $_POST)) {
+            $lead->phone = $_POST['phone'];
+        }
+        if (array_key_exists('email', $_POST)) {
+            $lead->email = $_POST['email'];
+        }
 
         $infoFields = self::getInfoFileds();
         if ($infoFields) {
             $lead->info = $infoFields;
         }
-        
+
         $lead->save();
     }
 
