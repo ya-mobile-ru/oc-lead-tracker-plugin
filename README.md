@@ -14,7 +14,7 @@ This plugin provides 1 component — Tracker. Component have no forms and defaul
 ### Tracker component
 This component allows frontend to submit lead forms with any information to backend.
 Basic usage example:
-```
+```Twig
 [Tracker]
 ==
 <form data-request="Tracker::onSubmitLeadForm">
