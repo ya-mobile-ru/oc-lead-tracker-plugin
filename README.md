@@ -1,4 +1,4 @@
-# Lead plugin
+# Lead Tracker plugin
 Lead tracking system for October CMS.
 ## Installation
 Run the following to install this plugin:
