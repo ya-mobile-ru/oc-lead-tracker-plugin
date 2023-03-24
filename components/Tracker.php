@@ -31,6 +31,15 @@ class Tracker extends ComponentBase
             $lead->email = $_POST['email'];
         }
 
+        if(isset($_SERVER['HTTP_USER_AGENT'])){
+            $lead->user_agent = $_SERVER['HTTP_USER_AGENT'];
+        }
+
+        $userIp = self::getUserIp();
+        if($userIp) {
+            $lead->ip = $userIp;
+        }
+
         $infoFields = self::getInfoFileds();
         if ($infoFields) {
             $lead->info = $infoFields;
@@ -39,6 +48,24 @@ class Tracker extends ComponentBase
         $lead->source = self::getURL();
 
         $lead->save();
+    }
+
+    static private function getUserIp()
+    {
+
+        $client  = @$_SERVER['HTTP_CLIENT_IP'];
+        $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+        $remote  = @$_SERVER['REMOTE_ADDR'];
+
+        if(filter_var($client, FILTER_VALIDATE_IP)){
+            $ip = $client;
+        } elseif(filter_var($forward, FILTER_VALIDATE_IP)) {
+            $ip = $forward;
+        } else{
+            $ip = $remote;
+        }
+
+        return $ip;
     }
 
     static private function getInfoFileds()
@@ -76,4 +103,7 @@ class Tracker extends ComponentBase
 
         return $url;
     }
+
+
+
 }
