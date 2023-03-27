@@ -31,4 +31,17 @@ return [
             'description' => 'Component for submitting lead forms',
         ]
     ],
+    'settings' => [
+        'label' => 'Lead Tracker',
+        'description' => 'Notification settings',
+        'category' => 'Marketing',
+        'keywords' => 'notifications',
+        'emails' => [
+            'label' => 'Emails',
+            'prompt' => 'Add new email',
+            'comment' => 'To send notifications to',
+            'email_label' => 'Email',
+            'email_placeholder' => 'admin@gmail.com',
+        ],
+    ],
 ];
