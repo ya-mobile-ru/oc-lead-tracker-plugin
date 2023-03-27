@@ -1,0 +1,15 @@
+fields:
+  emails:
+    label: yamobile.leadtracker::lang.settings.emails.label
+    prompt: yamobile.leadtracker::lang.settings.emails.prompt
+    style: default
+    span: auto
+    type: repeater
+    commentAbove: yamobile.leadtracker::lang.settings.emails.comment
+    form:
+      fields:
+        email:
+          label: yamobile.leadtracker::lang.settings.emails.email_label
+          span: auto
+          placeholder: yamobile.leadtracker::lang.settings.emails.email_placeholder
+          type: text
