@@ -35,4 +35,19 @@ class Plugin extends PluginBase
                 \Yamobile\LeadTracker\Components\Tracker::class => 'Tracker',
         ];
     }
+
+    public function registerSettings()
+    {
+        return [
+            'leadtracker' => [
+                'label' => 'yamobile.leadtracker::lang.settings.label',
+                'description' => 'yamobile.leadtracker::lang.settings.description',
+                'category' => 'yamobile.leadtracker::lang.settings.category',
+                'icon' => 'icon-group',
+                'class' => \Yamobile\LeadTracker\Models\Settings::class,
+                'order' => 500,
+                'keywords' => 'yamobile.leadtracker::lang.settings.keywords'
+            ]
+        ];
+    }
 }
