@@ -15,6 +15,8 @@ return [
         'email' => 'Email',
         'email_placeholder' => 'admin@gmail.com',
         'info' => 'Информация',
+        'more' => 'Доп. поля',
+        'no-data' => 'Нет данных',
         'info_placeholder' => 'Информация',
         'source' => 'Источник',
         'ip' => 'IP',
