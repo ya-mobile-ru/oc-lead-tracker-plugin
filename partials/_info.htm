@@ -1,0 +1,14 @@
+<div class="form-group text-field">
+    <?php if ($model->info): ?>
+        <?php foreach(json_decode($model->info, true) as $key=>$value): ?>
+            <div class="form-group text-field">
+                <label for="Form-field-Lead-<?=$key?>"><?=$key?></label>
+                <input class="form-control" type="text" name="<?=$key?>" id="Form-field-Lead-<?=$key?>" value="<?=$value?>" disabled="disabled" />
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>
+            <?= e(trans('yamobile.leadtracker::lang.lead.no-data')) ?>
+        </p>
+    <?php endif ?>
+</div>
