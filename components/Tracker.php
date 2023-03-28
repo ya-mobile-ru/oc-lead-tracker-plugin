@@ -33,7 +33,21 @@ class Tracker extends ComponentBase
         }
 
         if(isset($_SERVER['HTTP_USER_AGENT'])){
-            $lead->user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+            $lead->user_agent = Browser::userAgent();
+
+            if(Browser::deviceType() !== null){
+                $lead->device_type = Browser::deviceType();
+            }
+
+            if(Browser::browserName() !== null){
+                $lead->browser_name = Browser::browserName();
+            }
+
+            if(Browser::deviceType() !== null){
+                $lead->platform_name = Browser::platformName();
+            }
+
         }
 
         $userIp = self::getUserIp();
