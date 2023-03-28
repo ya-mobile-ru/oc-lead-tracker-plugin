@@ -47,3 +47,21 @@ fields:
     type: text
     span: auto
     disabled: 1
+  device_type:
+    label: yamobile.leadtracker::lang.lead.device_type
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  browser_name:
+    label: yamobile.leadtracker::lang.lead.browser_name
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  platform_name:
+    label: yamobile.leadtracker::lang.lead.platform_name
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
