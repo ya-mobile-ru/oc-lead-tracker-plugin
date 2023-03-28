@@ -4,6 +4,7 @@ namespace Yamobile\LeadTracker\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
+use hisorange\BrowserDetect\Parser as Browser;
 
 class Tracker extends ComponentBase
 {
@@ -103,7 +104,5 @@ class Tracker extends ComponentBase
 
         return $url;
     }
-
-
 
 }
