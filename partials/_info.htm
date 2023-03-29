@@ -1,8 +1,8 @@
-<div class="form-group text-field">
+<div class="form-group text-field"  style="padding: 10px 15px;border-radius: 10px; background: #f3f3f3">
     <?php if ($model->info): ?>
         <?php foreach(json_decode($model->info, true) as $key=>$value): ?>
             <div class="form-group text-field">
-                <label for="Form-field-Lead-<?=$key?>"><?=$key?></label>
+                <label for="Form-field-Lead-<?=$key?>"><?=str_replace('info:','',$key)?></label>
                 <input class="form-control" type="text" name="<?=$key?>" id="Form-field-Lead-<?=$key?>" value="<?=$value?>" disabled="disabled" />
             </div>
         <?php endforeach; ?>

@@ -47,11 +47,6 @@ fields:
     type: text
     span: auto
     disabled: 1
-  partial:
-    label: 'yamobile.leadtracker::lang.lead.more'
-    span: full
-    path: $/yamobile/leadtracker/partials/_info.htm
-    type: partial
   device_type:
     label: yamobile.leadtracker::lang.lead.device_type
     required: 0
@@ -70,3 +65,38 @@ fields:
     type: text
     span: auto
     disabled: 1
+  utm_source:
+    label: 'yamobile.leadtracker::lang.lead.utm_source'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_medium:
+    label: 'yamobile.leadtracker::lang.lead.utm_medium'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_campaign:
+    label: 'yamobile.leadtracker::lang.lead.utm_campaign'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_term:
+    label: 'yamobile.leadtracker::lang.lead.utm_term'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_content:
+    label: 'yamobile.leadtracker::lang.lead.utm_content'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  more:
+    label: 'yamobile.leadtracker::lang.lead.more'
+    span: full
+    path: $/yamobile/leadtracker/partials/_info.htm
+    type: partial

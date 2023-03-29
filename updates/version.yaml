@@ -12,3 +12,6 @@
   - Added definition of user device information
   - Localization errors have been fixed
   - add_user_device_to_yamobile_leadtracker_leads.php
+0.5.0:
+  - Added definition of utm tags
+  - add_utm_mark_to_yamobile_leadtracker_leads.php

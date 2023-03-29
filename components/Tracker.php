@@ -61,6 +61,26 @@ class Tracker extends ComponentBase
             $lead->info = $infoFields;
         }
 
+        if(!empty($_GET['utm_source'])) {
+            $lead->utm_source = htmlspecialchars($_GET['utm_source'], ENT_QUOTES, 'UTF-8');
+        }
+
+        if(!empty($_GET['utm_medium'])) {
+            $lead->utm_medium = htmlspecialchars($_GET['utm_medium'], ENT_QUOTES, 'UTF-8');
+        }
+
+        if(!empty($_GET['utm_campaign'])) {
+            $lead->utm_campaign = htmlspecialchars($_GET['utm_campaign'], ENT_QUOTES, 'UTF-8');
+        }
+
+        if(!empty($_GET['utm_term'])) {
+            $lead->utm_term = htmlspecialchars($_GET['utm_term'], ENT_QUOTES, 'UTF-8');
+        }
+
+        if(!empty($_GET['utm_content'])) {
+            $lead->utm_content = htmlspecialchars($_GET['utm_content'], ENT_QUOTES, 'UTF-8');
+        }
+
         $lead->source = self::getURL();
 
         if ($lead->save()) {
