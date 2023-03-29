@@ -4,6 +4,8 @@ namespace Yamobile\LeadTracker\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
+use Yamobile\LeadTracker\Models\Settings;
+use Mail;
 
 class Tracker extends ComponentBase
 {
@@ -31,12 +33,12 @@ class Tracker extends ComponentBase
             $lead->email = $_POST['email'];
         }
 
-        if(isset($_SERVER['HTTP_USER_AGENT'])){
+        if (isset($_SERVER['HTTP_USER_AGENT'])) {
             $lead->user_agent = $_SERVER['HTTP_USER_AGENT'];
         }
 
         $userIp = self::getUserIp();
-        if($userIp) {
+        if ($userIp) {
             $lead->ip = $userIp;
         }
 
@@ -47,21 +49,23 @@ class Tracker extends ComponentBase
 
         $lead->source = self::getURL();
 
-        $lead->save();
+        if ($lead->save()) {
+            self::sendNotifications($lead);
+        }
     }
 
     static private function getUserIp()
     {
 
-        $client  = @$_SERVER['HTTP_CLIENT_IP'];
+        $client = @$_SERVER['HTTP_CLIENT_IP'];
         $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-        $remote  = @$_SERVER['REMOTE_ADDR'];
+        $remote = @$_SERVER['REMOTE_ADDR'];
 
-        if(filter_var($client, FILTER_VALIDATE_IP)){
+        if (filter_var($client, FILTER_VALIDATE_IP)) {
             $ip = $client;
-        } elseif(filter_var($forward, FILTER_VALIDATE_IP)) {
+        } elseif (filter_var($forward, FILTER_VALIDATE_IP)) {
             $ip = $forward;
-        } else{
+        } else {
             $ip = $remote;
         }
 
@@ -99,11 +103,29 @@ class Tracker extends ComponentBase
             $url .= "http://";
         }
         $url .= $_SERVER['HTTP_HOST'];
-        $url.= $_SERVER['REQUEST_URI'];
+        $url .= $_SERVER['REQUEST_URI'];
 
         return $url;
     }
 
+    private static function sendNotifications($lead)
+    {
+        $notificationEmails = array();
+        $settingsEmails = Settings::get('emails');
+        foreach ($settingsEmails as $settingsEmail) {
+            array_push($notificationEmails, $settingsEmail['email']);
+        }
 
+        $notificationLead = [
+            'name' => $lead->name,
+            'phone' => $lead->phone,
+            'email' => $lead->email,
+            'info' => $lead->info,
+            'source' => $lead->source,
+            'ip' => $lead->ip,
+            'user_agent' => $lead->user_agent,
+        ];
 
+        Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
+    }
 }

@@ -33,4 +33,17 @@ return [
             'description' => 'Компонент для приёма лидов с форм',
         ]
     ],
+    'settings' => [
+        'label' => 'Lead Tracker',
+        'description' => 'Настройки оповещений',
+        'category' => 'Маркетинг',
+        'keywords' => 'оповещения',
+        'emails' => [
+            'label' => 'Email\'ы',
+            'prompt' => 'Добавить новый email',
+            'comment' => 'Для уведомлений',
+            'email_label' => 'Email',
+            'email_placeholder' => 'admin@gmail.com',
+        ],
+    ],
 ];
