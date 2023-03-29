@@ -47,6 +47,11 @@ fields:
     type: text
     span: auto
     disabled: 1
+  partial:
+    label: 'yamobile.leadtracker::lang.lead.more'
+    span: full
+    path: $/yamobile/leadtracker/partials/_info.htm
+    type: partial
   device_type:
     label: yamobile.leadtracker::lang.lead.device_type
     required: 0

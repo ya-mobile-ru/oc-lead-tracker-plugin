@@ -15,6 +15,8 @@ return [
         'email' => 'Email',
         'email_placeholder' => 'admin@gmail.com',
         'info' => 'Информация',
+        'more' => 'Доп. поля',
+        'no-data' => 'Нет данных',
         'info_placeholder' => 'Информация',
         'source' => 'Источник',
         'ip' => 'IP',
@@ -33,5 +35,18 @@ return [
             'name' => 'Lead Tracker',
             'description' => 'Компонент для приёма лидов с форм',
         ]
+    ],
+    'settings' => [
+        'label' => 'Lead Tracker',
+        'description' => 'Настройки оповещений',
+        'category' => 'Маркетинг',
+        'keywords' => 'оповещения',
+        'emails' => [
+            'label' => 'Email\'ы',
+            'prompt' => 'Добавить новый email',
+            'comment' => 'Для уведомлений',
+            'email_label' => 'Email',
+            'email_placeholder' => 'admin@gmail.com',
+        ],
     ],
 ];
