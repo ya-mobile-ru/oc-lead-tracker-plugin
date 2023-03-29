@@ -50,4 +50,11 @@ class Plugin extends PluginBase
             ]
         ];
     }
+
+    public function registerMailTemplates()
+    {
+        return [
+            'yamobile.leadtracker::mail.lead',
+        ];
+    }
 }
