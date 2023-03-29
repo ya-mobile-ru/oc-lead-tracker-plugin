@@ -5,3 +5,10 @@
   - create_yamobile_leadtracker_leads.php
 0.3.0:
   - Add Tracker component
+0.4.0:
+  - Added ip address definition
+  - Added user address definition
+  - Added the ability to create custom fields
+  - Added definition of user device information
+  - Localization errors have been fixed
+  - add_user_device_to_yamobile_leadtracker_leads.php

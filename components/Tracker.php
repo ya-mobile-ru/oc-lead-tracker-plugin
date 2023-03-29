@@ -4,6 +4,7 @@ namespace Yamobile\LeadTracker\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
+use hisorange\BrowserDetect\Parser as Browser;
 use Yamobile\LeadTracker\Models\Settings;
 use Mail;
 
@@ -33,8 +34,21 @@ class Tracker extends ComponentBase
             $lead->email = $_POST['email'];
         }
 
-        if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $lead->user_agent = $_SERVER['HTTP_USER_AGENT'];
+        if(isset($_SERVER['HTTP_USER_AGENT'])){
+
+            $lead->user_agent = Browser::userAgent();
+
+            if(Browser::deviceType() !== null){
+                $lead->device_type = Browser::deviceType();
+            }
+
+            if(Browser::browserName() !== null){
+                $lead->browser_name = Browser::browserName();
+            }
+
+            if(Browser::deviceType() !== null){
+                $lead->platform_name = Browser::platformName();
+            }
         }
 
         $userIp = self::getUserIp();
