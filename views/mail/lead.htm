@@ -125,7 +125,7 @@ name = "System layout"
 								<tbody>
 									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
 										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Информация:</strong> </td>
-										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ info }}</td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ info|json_encode() }}</td>
 									</tr>
 									<tr>
 										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
@@ -156,7 +156,7 @@ name = "System layout"
 						</td>
 					</tr>
 				{% endif %}
-				{% if user_agent %}
+				{% if device_type %}
 					<tr>
 						<td>
 							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
@@ -166,8 +166,8 @@ name = "System layout"
 								</colgroup>
 								<tbody>
 									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
-										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>User-Agent:</strong> </td>
-										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ user_agent }}</td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Тип дивайса:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ device_type }}</td>
 									</tr>
 									<tr>
 										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
@@ -177,6 +177,154 @@ name = "System layout"
 						</td>
 					</tr>
 				{% endif %}
+				{% if browser_name %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Имя браузера:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ browser_name }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if platform_name %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Операционая система:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ platform_name }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if utm_source %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>UTM Source:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ utm_source }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if utm_medium %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>UTM Medium:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ utm_medium }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if utm_campaign %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>UTM Campaign:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ utm_campaign }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if utm_term %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>UTM Term:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ utm_term }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+				{% if utm_content %}
+				<tr>
+					<td>
+						<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+							<colgroup>
+								<col width="30%" />
+								<col width="70%" />
+							</colgroup>
+							<tbody>
+							<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>UTM Content:</strong> </td>
+								<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ utm_content }}</td>
+							</tr>
+							<tr>
+								<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{% endif %}
+
 			</table>
 			<!--[if (gte mso 9)|(IE)]> </td></tr></table><![endif]-->
 		</td>
