@@ -4,6 +4,9 @@ namespace Yamobile\LeadTracker\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
+use hisorange\BrowserDetect\Parser as Browser;
+use Yamobile\LeadTracker\Models\Settings;
+use Mail;
 
 class Tracker extends ComponentBase
 {
@@ -32,11 +35,25 @@ class Tracker extends ComponentBase
         }
 
         if(isset($_SERVER['HTTP_USER_AGENT'])){
-            $lead->user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+            $lead->user_agent = Browser::userAgent();
+
+            if(Browser::deviceType() !== null){
+                $lead->device_type = Browser::deviceType();
+            }
+
+            if(Browser::browserName() !== null){
+                $lead->browser_name = Browser::browserName();
+            }
+
+            if(Browser::deviceType() !== null){
+                $lead->platform_name = Browser::platformName();
+            }
         }
 
-        if(self::getUserIp()) {
-            $lead->ip = self::getUserIp();
+        $userIp = self::getUserIp();
+        if ($userIp) {
+            $lead->ip = $userIp;
         }
 
         $infoFields = self::getInfoFileds();
@@ -66,21 +83,23 @@ class Tracker extends ComponentBase
 
         $lead->source = self::getURL();
 
-        $lead->save();
+        if ($lead->save()) {
+            self::sendNotifications($lead);
+        }
     }
 
     static private function getUserIp()
     {
 
-        $client  = @$_SERVER['HTTP_CLIENT_IP'];
+        $client = @$_SERVER['HTTP_CLIENT_IP'];
         $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-        $remote  = @$_SERVER['REMOTE_ADDR'];
+        $remote = @$_SERVER['REMOTE_ADDR'];
 
-        if(filter_var($client, FILTER_VALIDATE_IP)){
+        if (filter_var($client, FILTER_VALIDATE_IP)) {
             $ip = $client;
-        } elseif(filter_var($forward, FILTER_VALIDATE_IP)) {
+        } elseif (filter_var($forward, FILTER_VALIDATE_IP)) {
             $ip = $forward;
-        } else{
+        } else {
             $ip = $remote;
         }
 
@@ -118,9 +137,29 @@ class Tracker extends ComponentBase
             $url .= "http://";
         }
         $url .= $_SERVER['HTTP_HOST'];
-        $url.= $_SERVER['REQUEST_URI'];
+        $url .= $_SERVER['REQUEST_URI'];
 
         return $url;
     }
 
+    private static function sendNotifications($lead)
+    {
+        $notificationEmails = array();
+        $settingsEmails = Settings::get('emails');
+        foreach ($settingsEmails as $settingsEmail) {
+            array_push($notificationEmails, $settingsEmail['email']);
+        }
+
+        $notificationLead = [
+            'name' => $lead->name,
+            'phone' => $lead->phone,
+            'email' => $lead->email,
+            'info' => $lead->info,
+            'source' => $lead->source,
+            'ip' => $lead->ip,
+            'user_agent' => $lead->user_agent,
+        ];
+
+        Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
+    }
 }

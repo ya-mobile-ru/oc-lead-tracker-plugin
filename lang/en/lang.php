@@ -26,6 +26,9 @@ return [
         'utm_campaign' => 'Campaign name - utm_campaign',
         'utm_term' => 'Keyword - utm_term',
         'utm_content' => 'Campaign content - utm_content',
+        'device_type' => 'Device type',
+        'browser_name' => 'Browser name',
+        'platform_name' => 'Platform name',
         'created_at' => 'Created at',
         'breadcrumb-index' => 'Leads',
         'breadcrumb-create' => 'New lead',
@@ -37,5 +40,18 @@ return [
             'name' => 'Lead Tracker',
             'description' => 'Component for submitting lead forms',
         ]
+    ],
+    'settings' => [
+        'label' => 'Lead Tracker',
+        'description' => 'Notification settings',
+        'category' => 'Marketing',
+        'keywords' => 'notifications',
+        'emails' => [
+            'label' => 'Emails',
+            'prompt' => 'Add new email',
+            'comment' => 'To send notifications to',
+            'email_label' => 'Email',
+            'email_placeholder' => 'admin@gmail.com',
+        ],
     ],
 ];

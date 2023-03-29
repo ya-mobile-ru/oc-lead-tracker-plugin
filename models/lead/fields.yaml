@@ -1,85 +1,102 @@
 fields:
-    id:
-        label: 'yamobile.leadtracker::lang.lead.id'
-        required: 0
-        type: number
-        span: auto
-        disabled: 1
-    name:
-        label: 'yamobile.leadtracker::lang.lead.name'
-        placeholder: 'yamobile.leadtracker::lang.lead.name_placeholder'
-        required: 0
-        type: text
-        span: auto
-    phone:
-        label: 'yamobile.leadtracker::lang.lead.phone'
-        placeholder: 'yamobile.leadtracker::lang.lead.phone_placeholder'
-        required: 0
-        type: text
-        span: auto
-    email:
-        label: 'yamobile.leadtracker::lang.lead.email'
-        placeholder: 'yamobile.leadtracker::lang.lead.email_placeholder'
-        required: 0
-        type: text
-        span: auto
-    info:
-        label: 'yamobile.leadtracker::lang.lead.info'
-        span: auto
-        disabled: 1
-        required: 0
-        type: text
-    source:
-        label: 'yamobile.leadtracker::lang.lead.source'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    ip:
-        label: 'yamobile.leadtracker::lang.lead.ip'
-        span: auto
-        disabled: 1
-        required: 0
-        type: text
-    user_agent:
-        label: 'yamobile.leadtracker::lang.lead.user_agent'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    utm_source:
-        label: 'yamobile.leadtracker::lang.lead.utm_source'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    utm_medium:
-        label: 'yamobile.leadtracker::lang.lead.utm_medium'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    utm_campaign:
-        label: 'yamobile.leadtracker::lang.lead.utm_campaign'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    utm_term:
-        label: 'yamobile.leadtracker::lang.lead.utm_term'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    utm_content:
-        label: 'yamobile.leadtracker::lang.lead.utm_content'
-        required: 0
-        type: text
-        span: auto
-        disabled: 1
-    more:
-        label: 'yamobile.leadtracker::lang.lead.more'
-        span: full
-        path: $/yamobile/leadtracker/partials/_info.htm
-        type: partial
-
+  id:
+    label: yamobile.leadtracker::lang.lead.id
+    required: 0
+    type: number
+    span: auto
+    disabled: 1
+  name:
+    label: yamobile.leadtracker::lang.lead.name
+    placeholder: yamobile.leadtracker::lang.lead.name_placeholder
+    required: 0
+    type: text
+    span: auto
+  phone:
+    label: yamobile.leadtracker::lang.lead.phone
+    placeholder: yamobile.leadtracker::lang.lead.phone_placeholder
+    required: 0
+    type: text
+    span: auto
+  email:
+    label: yamobile.leadtracker::lang.lead.email
+    placeholder: yamobile.leadtracker::lang.lead.email_placeholder
+    required: 0
+    type: text
+    span: auto
+  info:
+    label: yamobile.leadtracker::lang.lead.info
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  source:
+    label: yamobile.leadtracker::lang.lead.source
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  ip:
+    label: yamobile.leadtracker::lang.lead.ip
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  user_agent:
+    label: yamobile.leadtracker::lang.lead.user_agent
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  device_type:
+    label: yamobile.leadtracker::lang.lead.device_type
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  browser_name:
+    label: yamobile.leadtracker::lang.lead.browser_name
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  platform_name:
+    label: yamobile.leadtracker::lang.lead.platform_name
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_source:
+    label: 'yamobile.leadtracker::lang.lead.utm_source'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_medium:
+    label: 'yamobile.leadtracker::lang.lead.utm_medium'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_campaign:
+    label: 'yamobile.leadtracker::lang.lead.utm_campaign'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_term:
+    label: 'yamobile.leadtracker::lang.lead.utm_term'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  utm_content:
+    label: 'yamobile.leadtracker::lang.lead.utm_content'
+    required: 0
+    type: text
+    span: auto
+    disabled: 1
+  more:
+    label: 'yamobile.leadtracker::lang.lead.more'
+    span: full
+    path: $/yamobile/leadtracker/partials/_info.htm
+    type: partial

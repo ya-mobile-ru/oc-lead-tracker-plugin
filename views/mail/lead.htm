@@ -1,0 +1,206 @@
+name = "System layout"
+==
+<table style="color: #5c5c5c;" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td bgcolor="#03A9F4" align="center">
+			<!--[if (gte mso 9)|(IE)]> <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"> <tr> <td align="center" valign="top" width="600"><![endif]-->
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+				<tr>
+					<td align="center" valign="top" style="padding: 0px 10px 15px;"> <a href="https://ya-mobile.ru/" target="_blank"> <img alt="Logo" src="http://ya-mobile.ru/identity/ya-mobile-logo-white.png" width="125" height="20" style=" display: block; width: 125px; max-width: 125px; min-width: 20px;" border="0" /> </a> </td>
+				</tr>
+			</table>
+			<!--[if (gte mso 9)|(IE)]> </td></tr></table><![endif]-->
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#03A9F4" align="center" style="padding: 0px 10px 0px 10px;">
+			<!--[if (gte mso 9)|(IE)]> <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"> <tr> <td align="center" valign="top" width="600"><![endif]-->
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+				<tr>
+					<td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 20px; border-radius: 5px 5px 0px 0px; color: #111111; font-family: \'Lato\', Helvetica, Arial, sans-serif; ">
+						<h1 style="text-align:center; font-size: 20px; font-weight: 600; margin: 15px 0 10px; color: #e74c3c;"> Клиент ждёт звонка, перезвоните ему сейчас </h1>
+						<p style="text-align:center; padding: 0 20px; font-size: 16px; font-weight: 400; color: #757575;"> Новая заявка на сайте <a href="{{ url('/') }}" style="color: #0288d1;">{{ url('/') }}</a> </p>
+					</td>
+				</tr>
+			</table>
+			<!--[if (gte mso 9)|(IE)]> </td></tr></table><![endif]-->
+		</td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#f5f8fa" style="padding: 0px 10px 0px 10px;">
+			<!--[if (gte mso 9)|(IE)]> <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"> <tr> <td align="center" valign="top" width="600"><![endif]-->
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+				{% if source %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Источник:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; "><a style="color:#0288d1" href="{{ source }}">{{ source }}</a></td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if name %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Имя:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ name }}</td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if phone %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Телефон:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ phone }}</td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if email %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Email:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; "><a style="color:#0288d1" href="mailto:{{ email }}">{{ email }}</a></td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if info %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Информация:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ info }}</td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if ip %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>IP:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ ip }}</td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+				{% if user_agent %}
+					<tr>
+						<td>
+							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+								<colgroup>
+									<col width="30%" />
+									<col width="70%" />
+								</colgroup>
+								<tbody>
+									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>User-Agent:</strong> </td>
+										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ user_agent }}</td>
+									</tr>
+									<tr>
+										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{% endif %}
+			</table>
+			<!--[if (gte mso 9)|(IE)]> </td></tr></table><![endif]-->
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#f5f8fa" align="center" style="padding: 0px 10px 0px 10px;">
+			<!--[if (gte mso 9)|(IE)]> <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"> <tr> <td align="center" valign="top" width="600"><![endif]-->
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+				<tr>
+					<td bgcolor="#FFFFFF" align="left" style="padding: 15px; ">
+						<h2 align="center" style="color: #e74c3c; text-align:center; line-height: 14px; font-size: 16px; font-weight: 400; margin:0;"> <i>Не отвечайте на это письмо!</i></h2>
+					</td>
+				</tr>
+			</table>
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+				<tr>
+					<td bgcolor="#eeeeee" align="left" style="border-radius: 0px 0px 0px 5px; padding: 15px 20px 15px 20px; font-family: \'Lato\', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; "> Команда Ya-mobile </td>
+					<td bgcolor="#eeeeee" align="right" style="border-radius: 0px 0px 5px 0px; padding: 15px 20px 15px 20px; font-family: \'Lato\', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; vertical-align: middle; ">
+						<a href="https://vk.com/yamobileru" style="text-decoration: none;"><img src="http://ya-mobile.ru/identity/card-request-vk.png"></a>
+						
+					</td>
+				</tr>
+			</table>
+			<!--[if (gte mso 9)|(IE)]> </td></tr></table><![endif]-->
+		</td>
+	</tr>
+</table>

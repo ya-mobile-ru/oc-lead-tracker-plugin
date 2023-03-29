@@ -26,6 +26,9 @@ return [
         'utm_campaign' => 'Название кампании - utm_campaign',
         'utm_term' => 'Ключевое слово - utm_term',
         'utm_content' => 'Содержание кампании - utm_content',
+        'device_type' => 'Тип дивайса',
+        'browser_name' => 'Имя браузера',
+        'platform_name' => 'Операционая система',
         'created_at' => 'Создано',
         'breadcrumb-index' => 'Лиды',
         'breadcrumb-create' => 'Новый лид',
@@ -37,5 +40,18 @@ return [
             'name' => 'Lead Tracker',
             'description' => 'Компонент для приёма лидов с форм',
         ]
+    ],
+    'settings' => [
+        'label' => 'Lead Tracker',
+        'description' => 'Настройки оповещений',
+        'category' => 'Маркетинг',
+        'keywords' => 'оповещения',
+        'emails' => [
+            'label' => 'Email\'ы',
+            'prompt' => 'Добавить новый email',
+            'comment' => 'Для уведомлений',
+            'email_label' => 'Email',
+            'email_placeholder' => 'admin@gmail.com',
+        ],
     ],
 ];
