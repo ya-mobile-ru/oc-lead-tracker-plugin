@@ -4,6 +4,8 @@ namespace Yamobile\LeadTracker\Components;
 
 use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
+use Yamobile\LeadTracker\Models\Settings;
+use Mail;
 
 class Tracker extends ComponentBase
 {
@@ -47,7 +49,9 @@ class Tracker extends ComponentBase
 
         $lead->source = self::getURL();
 
-        $lead->save();
+        if ($lead->save()) {
+            self::sendNotifications($lead);
+        }
     }
 
     static private function getUserIp()
@@ -104,6 +108,24 @@ class Tracker extends ComponentBase
         return $url;
     }
 
+    private static function sendNotifications($lead)
+    {
+        $notificationEmails = array();
+        $settingsEmails = Settings::get('emails');
+        foreach ($settingsEmails as $settingsEmail) {
+            array_push($notificationEmails, $settingsEmail['email']);
+        }
 
+        $notificationLead = [
+            'name' => $lead->name,
+            'phone' => $lead->phone,
+            'email' => $lead->email,
+            'info' => $lead->info,
+            'source' => $lead->source,
+            'ip' => $lead->ip,
+            'user_agent' => $lead->user_agent,
+        ];
 
+        Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
+    }
 }
