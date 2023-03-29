@@ -18,6 +18,10 @@ class CreateYamobileLeadtrackerLeads extends Migration
             $table->text('info')->nullable();
             $table->string('source')->nullable();
             $table->string('ip')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->string('device_type')->nullable();
+            $table->string('browser_name')->nullable();
+            $table->string('platform_name')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
