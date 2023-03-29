@@ -157,7 +157,14 @@ class Tracker extends ComponentBase
             'info' => $lead->info,
             'source' => $lead->source,
             'ip' => $lead->ip,
-            'user_agent' => $lead->user_agent,
+            'device_type' => $lead->device_type,
+            'browser_name' => $lead->browser_name,
+            'platform_name' => $lead->platform_name,
+            'utm_source' => $lead->utm_source,
+            'utm_medium' => $lead->utm_medium,
+            'utm_campaign' => $lead->utm_campaign,
+            'utm_term' => $lead->utm_term,
+            'utm_ontent' => $lead->utm_content,
         ];
 
         Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
