@@ -17,3 +17,5 @@
   - add_utm_mark_to_yamobile_leadtracker_leads.php
 0.5.1:
   - Fixed output of info fields in the template email
+0.5.2:
+  - Add subject for new lead mail view
