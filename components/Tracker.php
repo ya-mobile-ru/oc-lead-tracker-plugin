@@ -82,7 +82,6 @@ class Tracker extends ComponentBase
         }
 
         $lead->source = self::getURL();
-
         if ($lead->save()) {
             self::sendNotifications($lead);
         }
@@ -154,7 +153,7 @@ class Tracker extends ComponentBase
             'name' => $lead->name,
             'phone' => $lead->phone,
             'email' => $lead->email,
-            'info' => $lead->info,
+            'info' => json_decode($lead->info,true),
             'source' => $lead->source,
             'ip' => $lead->ip,
             'device_type' => $lead->device_type,
