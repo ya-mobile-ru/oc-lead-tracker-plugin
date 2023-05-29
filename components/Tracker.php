@@ -82,7 +82,6 @@ class Tracker extends ComponentBase
         }
 
         $lead->source = self::getURL();
-
         if ($lead->save()) {
             self::sendNotifications($lead);
         }
@@ -111,16 +110,12 @@ class Tracker extends ComponentBase
         $infoFields = array();
 
         $postArrayKeys = array_keys($_POST);
-
-
         $infoArrayKeys = array_filter($postArrayKeys, function ($key) {
             $substring = substr($key, 0, 5);
             if ($substring === self::INFO_FIELDS_KEY) {
                 return $key;
             }
         });
-
-
         foreach ($infoArrayKeys as $key) {
             $infoFields = array_merge($infoFields, array($key => $_POST[$key]));
         }
