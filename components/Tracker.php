@@ -111,12 +111,16 @@ class Tracker extends ComponentBase
         $infoFields = array();
 
         $postArrayKeys = array_keys($_POST);
+
+
         $infoArrayKeys = array_filter($postArrayKeys, function ($key) {
             $substring = substr($key, 0, 5);
             if ($substring === self::INFO_FIELDS_KEY) {
                 return $key;
             }
         });
+
+
         foreach ($infoArrayKeys as $key) {
             $infoFields = array_merge($infoFields, array($key => $_POST[$key]));
         }
@@ -154,7 +158,7 @@ class Tracker extends ComponentBase
             'name' => $lead->name,
             'phone' => $lead->phone,
             'email' => $lead->email,
-            'info' => $lead->info,
+            'info' => json_decode($lead->info,true),
             'source' => $lead->source,
             'ip' => $lead->ip,
             'device_type' => $lead->device_type,
