@@ -115,25 +115,34 @@ name = "System layout"
 					</tr>
 				{% endif %}
 				{% if info %}
-					<tr>
-						<td>
-							<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
-								<colgroup>
-									<col width="30%" />
-									<col width="70%" />
-								</colgroup>
-								<tbody>
-									<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
-										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>Информация:</strong> </td>
-										<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">{{ info }}</td>
-									</tr>
-									<tr>
-										<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
+					{% for key, item in info %}
+						<tr>
+							<td>
+								<table align="left" border="0" cellpadding="0" cellspacing="0" style=" background-color: #bdbdbd; border: 0; clear: both; font-family: \'open sans\', sans-serif; font-size: 15px; margin: 0 auto 0 auto; table-layout: fixed; width: 100%; ">
+									<colgroup>
+										<col width="30%" />
+										<col width="70%" />
+									</colgroup>
+									<tbody>
+										<tr style=" margin-bottom: 1px; background-color: #ffffff; padding: 10px 5.83% 10px 5.83%; border-bottom: 1px solid #000; ">
+											<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; color: #212121; "><strong>{{ key| replace({'info:': "",'_': " "}) }}:</strong> </td>
+											<td align="left" style=" padding: 16px 5.83% 16px 5.83%; word-break: break-all; ">
+												{% if item == 'on' %}
+													{{ 'Да' }}
+												{% else %}
+													{{ item }}
+												{% endif %}
+											</td>
+
+										</tr>
+										<tr>
+											<td style="padding: 1px 0 0 0; background-color: #bdbdbd;"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					{% endfor %}
 				{% endif %}
 				{% if ip %}
 					<tr>
