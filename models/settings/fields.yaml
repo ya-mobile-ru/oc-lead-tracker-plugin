@@ -1,4 +1,10 @@
 fields:
+  is_phone_required:
+    label: yamobile.leadtracker::lang.settings.fields.is_phone_required.label
+    span: full
+    placeholder: yamobile.leadtracker::lang.settings.fields.is_phone_required.placeholder
+    type: switch
+    default: false
   emails:
     label: yamobile.leadtracker::lang.settings.emails.label
     prompt: yamobile.leadtracker::lang.settings.emails.prompt
