@@ -53,5 +53,11 @@ return [
             'email_label' => 'Email',
             'email_placeholder' => 'admin@gmail.com',
         ],
+        'fields' => [
+            'is_phone_required' => [
+                'label' => 'Телефон обязательный',
+                'comment' => 'Если включено, телефон будет обязательным параметром',
+            ],
+        ],
     ],
 ];
