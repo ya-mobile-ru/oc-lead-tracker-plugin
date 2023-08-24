@@ -53,5 +53,11 @@ return [
             'email_label' => 'Email',
             'email_placeholder' => 'admin@gmail.com',
         ],
+        'fields' => [
+            'is_phone_required' => [
+                'label' => 'Phone is required',
+                'comment' => 'If enabled, phone will be a required parameter',
+            ],
+        ],
     ],
 ];
