@@ -21,3 +21,5 @@
   - Add subject for new lead mail view
 0.5.3:
   - Fix email view compatibility
+0.6.0:
+  - Added optional phone require for lead

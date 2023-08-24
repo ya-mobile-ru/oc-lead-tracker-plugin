@@ -6,6 +6,8 @@ use Cms\Classes\ComponentBase;
 use Yamobile\LeadTracker\Models\Lead;
 use hisorange\BrowserDetect\Parser as Browser;
 use Yamobile\LeadTracker\Models\Settings;
+use October\Rain\Exception\ValidationException;
+use Validator;
 use Mail;
 
 class Tracker extends ComponentBase
@@ -22,6 +24,9 @@ class Tracker extends ComponentBase
 
     public function onSubmitLeadForm()
     {
+
+        self::validateResponseData();
+
         $lead = new Lead;
 
         if (array_key_exists('name', $_POST)) {
@@ -167,5 +172,23 @@ class Tracker extends ComponentBase
         ];
 
         Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
+    }
+
+    private static function validateResponseData()
+    {
+        $validation = Validator::make(post(), [
+            'email' => 'email',
+            'source' => 'url|nullable',
+            'ip' => 'ip|nullable',
+        ]);
+
+        $validation->sometimes('phone', 'required', function(){
+            return (boolean)Settings::get('is_phone_required');
+        });
+
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
+
     }
 }
