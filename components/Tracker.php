@@ -25,7 +25,7 @@ class Tracker extends ComponentBase
     public function onSubmitLeadForm()
     {
 
-        self::validationResponseData();
+        self::validateResponseData();
 
         $lead = new Lead;
 
@@ -174,7 +174,7 @@ class Tracker extends ComponentBase
         Mail::sendTo($notificationEmails, 'yamobile.leadtracker::mail.lead', $notificationLead);
     }
 
-    private static function validationResponseData()
+    private static function validateResponseData()
     {
         $validation = Validator::make(post(), [
             'email' => 'email',
